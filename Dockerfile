@@ -20,6 +20,8 @@ COPY realip.conf /etc/nginx/realip.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-config /etc/inid.d/nginx-config
 
+RUN rc-update add nginx-config default
+
 EXPOSE 80 443
 
 VOLUME /var/www
