@@ -1,0 +1,12 @@
+#!/sbin/runscript
+
+depend() {
+    need localmount
+    after bootmisc
+}
+
+start() {
+    ebegin "Config Nginx worker processes"
+    sed -i "s/worker_processes 1;/worker_processes $(nproc);/" /etc/nginx/nginx.conf
+    eend $?
+}
