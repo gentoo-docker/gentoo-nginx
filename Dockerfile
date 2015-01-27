@@ -22,9 +22,9 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80 443
 
-VOLUME /var/www
+#VOLUME /var/www
 
-WORKDIR /var/www
+#WORKDIR /var/www
 
 ADD entrypoint.sh /entrypoint.sh
 
